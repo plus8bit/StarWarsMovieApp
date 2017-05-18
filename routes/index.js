@@ -24,18 +24,29 @@ exports.movie_single = function(req, res){
 
     var title = movie.title;
 
+    var main_characters = movie.main_characters;
+
     res.render('movie_single', {
       movies : movies,
       title : title,
-      movie : movie
+      movie : movie,
+      main_characters : main_characters
     });
   } else {
-    res.send("This is not the page you are looking for.");
+    res.render('notFound', {
+      movies : movies,
+      title : "This is not the page you are looking for"
+    });
   }
 };
 
 // notFound
 
 exports.notFound = function(req, res){
-  res.send("This is not the page that you are looking for");
+  var movies = moviesJSON.movies;
+
+  res.render('notFound', {
+    movies: movies,
+    title : "This is not the page you are looking for"
+  });
 };

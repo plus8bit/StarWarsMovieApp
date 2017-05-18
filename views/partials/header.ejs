@@ -7,7 +7,7 @@
         <ul class="dropdown-menu">
           <% for (var i = 0; i < movies.length; i++) { %>
             <li>
-            <a href="#" class="episode_link"><%= movies[i].title %></a>
+            <a href="/star_wars_episode/<%= i + 1 %>" class="episode_link"><%= movies[i].title %></a>
             </li>
             <% } %>
         </ul>
